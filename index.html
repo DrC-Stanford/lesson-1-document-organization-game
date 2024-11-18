@@ -116,6 +116,7 @@
             padding: 32px;
             margin-bottom: 24px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            text-align: center; /* Center the document stack */
         }
 
         .document-stack h2 {
@@ -124,9 +125,10 @@
         }
 
         .documents-grid {
-            display: flex;
+            display: inline-flex; /* Change to inline-flex to center */
             flex-wrap: wrap;
             gap: 16px;
+            justify-content: center; /* Center the documents */
         }
 
         .document {
@@ -251,8 +253,10 @@
 
     <script>
         // JavaScript Code
+
+        // Updated documents array with an even distribution across categories
         const documents = [
-            // [List of documents with explanations]
+            // Income & Tax Documents (5)
             {
                 id: 1,
                 name: 'W-2 Form 2023',
@@ -261,23 +265,121 @@
             },
             {
                 id: 2,
+                name: '1099-INT Form',
+                category: 'income',
+                explanation: 'A 1099-INT form reports interest income earned, which is taxable and must be reported on your tax return.',
+            },
+            {
+                id: 3,
+                name: 'Capital Gains Tax Form',
+                category: 'income',
+                explanation: 'A form reporting profits from the sale of assets, which are considered taxable income.',
+            },
+            {
+                id: 4,
+                name: 'Rental Income Statement',
+                category: 'income',
+                explanation: 'A statement showing income received from renting out property, which is taxable income.',
+            },
+            {
+                id: 5,
+                name: 'Pay Stub',
+                category: 'income',
+                explanation: 'A pay stub provides a detailed breakdown of your earnings and deductions for a specific pay period.',
+            },
+            // Expenses Documents (5)
+            {
+                id: 6,
                 name: 'Internet Bill',
                 category: 'expenses',
                 explanation: 'An internet bill is a monthly expense for your home or business internet service.',
             },
             {
-                id: 3,
+                id: 7,
+                name: 'Electric Bill',
+                category: 'expenses',
+                explanation: 'An electric bill is a regular expense for the electricity used in your home or business.',
+            },
+            {
+                id: 8,
+                name: 'Medical Bills',
+                category: 'expenses',
+                explanation: 'Medical bills are expenses incurred for healthcare services received.',
+            },
+            {
+                id: 9,
+                name: 'Property Tax Receipt',
+                category: 'expenses',
+                explanation: 'A receipt showing payment of property taxes, which are regular expenses for property owners.',
+            },
+            {
+                id: 10,
+                name: 'Mortgage Statement',
+                category: 'expenses',
+                explanation: 'A document detailing the amount owed on a home loan, including interest and principal payments.',
+            },
+            // Investments Documents (5)
+            {
+                id: 11,
                 name: 'Stock Portfolio',
                 category: 'investments',
                 explanation: 'A stock portfolio is a collection of stocks that you own, representing your investment holdings.',
             },
-            // ... [Include all documents as in the previous code]
             {
-                id: 20,
+                id: 12,
+                name: '401k Statement',
+                category: 'investments',
+                explanation: 'A 401k statement details your retirement savings and investment performance.',
+            },
+            {
+                id: 13,
+                name: 'Dividend Statement',
+                category: 'investments',
+                explanation: 'A statement showing dividends earned from investments, which may be reinvested or received as income.',
+            },
+            {
+                id: 14,
+                name: 'Mutual Fund Report',
+                category: 'investments',
+                explanation: 'A report showing the performance and holdings of your mutual fund investments.',
+            },
+            {
+                id: 15,
                 name: 'Annuity Contract',
                 category: 'investments',
                 explanation: 'A financial product that pays out a fixed stream of payments to an individual, used as part of retirement strategy.',
-            }
+            },
+            // Insurance Documents (5)
+            {
+                id: 16,
+                name: 'Health Insurance',
+                category: 'insurance',
+                explanation: 'Health insurance documents provide details about your health coverage and benefits.',
+            },
+            {
+                id: 17,
+                name: 'Car Insurance',
+                category: 'insurance',
+                explanation: 'Car insurance documents provide coverage details for your vehicle against accidents or damages.',
+            },
+            {
+                id: 18,
+                name: 'Life Insurance Policy',
+                category: 'insurance',
+                explanation: 'A contract providing financial protection to beneficiaries upon the policyholder’s death.',
+            },
+            {
+                id: 19,
+                name: 'Investment Property Insurance',
+                category: 'insurance',
+                explanation: 'Insurance covering property held as an investment against risks like fire or theft.',
+            },
+            {
+                id: 20,
+                name: 'Homeowners Insurance',
+                category: 'insurance',
+                explanation: 'Insurance policy covering losses and damages to an individual's house and assets in the home.',
+            },
         ];
 
         let score = 0;
